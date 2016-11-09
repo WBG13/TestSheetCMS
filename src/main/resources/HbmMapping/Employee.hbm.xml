@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Model.Beans.Employee" table="employee">
+        <!--<class entity-name="Model.Beans.Employee" table="employee">-->
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="surname" column="surname" type="string"/>
+        <property name="patronymic" column="patronymic" type="string"/>
+        <property name="position" column="position" type="string"/>
+    </class>
+</hibernate-mapping>

@@ -4,19 +4,20 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Model.Beans.Order" table="order">
+    <class name="model.beans.Order" table="order">
         <meta attribute="class-description">
             This class contains the department detail.
         </meta>
         <id name="id" type="int" column="id">
             <generator class="native"/>
         </id>
-        <property name="subject_of_the_order" column="subject_of_the_order" type="string"/>
-        <property name="author_of_the_order" column="author_of_the_order" type="string"/>
-        <property name="executors_of_the_order" column="executors_of_the_order" type="string"/>
-        <property name="period_of_execution" column="period_of_execution" type="date"/>
-        <property name="sign_of_the_control" column="sign_of_the_control" type="string"/>
-        <property name="sign_the_execution" column="sign_the_execution" type="string"/>
+        <property name="orderSubject" column="subject_of_the_order" type="string"/>
+        <property name="orderAuthor" column="author_of_the_order" type="string"/>
+        <property name="orderExecutor" column="executors_of_the_order" type="string"/>
+        <property name="periodOfExecution" column="period_of_execution" type="date"/>
+        <property name="signOfTheControl" column="sign_of_the_control" type="string"/>
+        <property name="signOfExecution" column="sign_the_execution" type="string"/>
+        <property name="orderText" column="text_of_the_order" type="string"/>
     </class>
 
 </hibernate-mapping>

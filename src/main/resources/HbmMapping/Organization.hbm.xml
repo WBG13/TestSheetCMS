@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Model.Beans.Organization" table="organization">
+    <class name="model.beans.Organization" table="organization">
         <meta attribute="class-description">
             This class contains the department detail.
         </meta>
@@ -13,7 +13,7 @@
         </id>
         <property name="name" column="name" type="string"/>
         <property name="address" column="address" type="string"/>
-        <property name="registered_office" column="registered_office" type="string"/>
+        <property name="registeredOffice" column="registered_office" type="string"/>
         <property name="director" column="director" type="date"/>
     </class>
 </hibernate-mapping>

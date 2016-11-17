@@ -23,10 +23,10 @@
             Ce10Irb10
         </property>
 
-        <mapping resource="HbmMapping/Employee.hbm.xml"/>
-        <mapping resource="HbmMapping/Department.hbm.xml"/>
-        <mapping resource="HbmMapping/Order.hbm.xml"/>
-        <mapping resource="HbmMapping/Organization.hbm.xml"/>
+        <mapping resource="hbmMapping/Employee.hbm.xml"/>
+        <mapping resource="hbmMapping/Department.hbm.xml"/>
+        <mapping resource="hbmMapping/Order.hbm.xml"/>
+        <mapping resource="hbmMapping/Organization.hbm.xml"/>
 
     </session-factory>
 

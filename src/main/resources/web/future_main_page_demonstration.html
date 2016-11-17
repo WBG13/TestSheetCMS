@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document management</title>
+	<link rel="stylesheet" href="demo.css" media="screen">
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dijit/themes/claro/claro.css" media="screen">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js">'></script>
+		
+		<style type="text/css">
+@import "C:/Users/_static/js/dojo/resources/dojo.css";
+@import "C:/Users/_static/js/dijit/themes/claro/claro.css";
+@import "C:/Users/_static/js/dojox/grid/enhanced/resources/claro/EnhancedGrid.css";
+@import "C:/Users/_static/js/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css";
+
+
+#grid {
+    width: 90%;
+    height: 40em;
+}
+	</style>
+	
+	
+	<script>
+dojo.require("dojox.grid.EnhancedGrid");
+dojo.require("dojox.grid.enhanced.plugins.Pagination");
+dojo.require("dojo.data.ItemFileWriteStore");
+	require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojo/domReady!", 
+	"dojo/json", "dojo/dom", "dojo/on", "dojo/domReady!"], function(parser){
+		parser.parse();
+	});
+
+
+
+dojo.ready(function(){
+    /*set up data store*/
+    var data = {
+      identifier: 'id',
+      items: []
+    };
+    var data_list = [
+      { col1: "normal", col2: false, col3: 'testing text', col4: 0},
+      { col1: "important", col2: false, col3: 'testing text', col4: 1},
+      { col1: "important", col2: false, col3: 'testing text', col4: 2}
+    ];
+    var rows = 200;
+    for(var i=0, l=data_list.length; i<rows; i++){
+      data.items.push(dojo.mixin({ id: i+1 }, data_list[i%l]));
+    }
+    var store = new dojo.data.ItemFileWriteStore({data: data});
+
+    /*set up layout*/
+    var test_layout = [[
+      {name: 'Column 1', field: 'id', width: "5%"},
+      {name: 'Column 2', field: 'col2', width: "15%"},
+      {name: 'Column 3', field: 'col3', width: "20%"},
+      {name: 'Column 4', field: 'col4', width: "40%"}
+    ]];
+	 
+	var organization = [[
+      {name: 'Name',				 field: 'name', width: 				"7%"},
+      {name: 'Director',			 field: 'director', width: 			"23%"},
+      {name: 'Address', 			 field: 'address', width:			"20%"},
+      {name: 'Registered Office',	 field: 'registeredOffice', width: 	"35%"}
+    ]];
+	
+	var organization = [[
+      {name: 'Order Author',		 field: 'orderAuthor', width: 		"5%"},
+      {name: 'Order Executor',		 field: 'orderExecutor', width: 	"5%"},
+      {name: 'Order Subject', 		 field: 'orderSubject', width: 		"5%"},
+      {name: 'Period Of Execution',	 field: 'periodOfExecution', width: "5%"},
+	  {name: 'Sign Of TheControl',	 field: 'signOfTheControl', width: 	"5%"},
+      {name: 'Sign Of Execution', 	 field: 'signOfExecution', width: 	"5%"},
+      {name: 'Order Text',			 field: 'orderText', width: 		"50%"}
+    ]];
+	
+	var employee = [[
+      {name: 'Name',				 field: 'name', width: 				"5%"},
+      {name: 'Surname',				 field: 'surname', width: 			"10%"},
+      {name: 'Patronymic', 			 field: 'patronymic', width:		"10%"},
+      {name: 'Position',			 field: 'position', width: 			"50%"}
+    ]];
+
+	var department = [[
+      {name: 'Department Name',		 field: 'departmentName', width: 	 "10%"},
+      {name: 'Director', 			 field: 'director', width:			 "5%"},
+	  {name: 'Contact Details',		 field: 'contactDetails', width: 	 "60%"}
+      
+    ]];
+	
+
+    /*create a new grid:*/
+    var grid = new dojox.grid.EnhancedGrid({
+        id: 'grid',
+        store: store,
+        structure: test_layout,
+        rowSelector: '20px',
+        plugins: {
+          pagination: {
+		      pageSizes: ["25", "50", "100", "All"],
+              description: true,
+              sizeSwitch: true,
+              pageStepper: true,
+              gotoButton: true,
+                      /*page step to be displayed*/
+              maxPageStep: 4,
+                      /*position of the pagination bar*/
+              position: "bottom"
+          }
+        }
+    }, document.createElement('div'));
+
+    /*append the new grid to the div*/
+    dojo.byId("gridDiv").appendChild(grid.domNode);
+
+    /*Call startup() to render the grid*/
+    grid.startup();
+});
+
+	</script>
+	</head>
+<body class="claro">
+<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+	<div class="centerPanel" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center', tabPosition: 'bottom'">
+		<div data-dojo-type="dijit/layout/ContentPane" title="Group 1">
+		
+		
+		<div id="gridDiv"></div>
+		
+		
+			<h4>Group 1 Content</h4>
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" title="Group Two">
+			<h4>Group 2 Content</h4>
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" title="Long Tab Label for this One">
+			<h4>Group 3 Content</h4>
+		</div>
+	</div>
+	<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">Sidebar content (left)</div>
+</div>
+
+<script>
+function(JSON, dom, on){
+  on(dom.byId("convert"), "click", function(){
+    var origin = '{"hello": "world"}';
+
+    var obj = JSON.parse(origin);
+
+    obj.hello = "Dojo";
+    obj.something = "New";
+
+    var output = JSON.stringify(obj);
+
+    dom.byId("output").innerHTML = output;
+  });
+});
+	</script>
+</body>
+</html>

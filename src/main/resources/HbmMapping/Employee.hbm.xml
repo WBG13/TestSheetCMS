@@ -4,8 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Model.Beans.Employee" table="employee">
-        <!--<class entity-name="Model.Beans.Employee" table="employee">-->
+    <class name="model.beans.Employee" table="employee">
         <meta attribute="class-description">
             This class contains the employee detail.
         </meta>

@@ -25,5 +25,8 @@
         <module name="DocumentManagement" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DocumentManagement" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

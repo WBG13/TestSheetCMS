@@ -4,12 +4,25 @@ import core.IDocument;
 
 import java.io.Serializable;
 
-/**
- * Created by TH-221 on 08.11.2016.
- */
 public class Employee implements Serializable, IDocument {
-    private String surname, name, patronymic, position;
+    private String surname, name, patronymic, position, departmentId, organizationId;
     private int id;
+
+    public String getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String organizationId) {
+        this.departmentId = organizationId;
+    }
 
     public int getId() {
         return id;

@@ -8,7 +8,8 @@ import java.io.InputStream;
 public class FileHtmlPageProvider implements HtmlPageProvider {
     private static FileHtmlPageProvider instance;
 
-    private FileHtmlPageProvider() {};
+    private FileHtmlPageProvider() {
+    }
 
     public static synchronized FileHtmlPageProvider getInstance() {
         if (instance == null) {

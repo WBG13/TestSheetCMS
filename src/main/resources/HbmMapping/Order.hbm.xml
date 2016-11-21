@@ -12,6 +12,8 @@
             <generator class="native"/>
         </id>
         <property name="orderSubject" column="subject_of_the_order" type="string"/>
+        <property name="orderExecutorId" column="order_executor_id" type="string"/>
+        <property name="orderAuthorId" column="order_author_id" type="string"/>
         <property name="orderAuthor" column="author_of_the_order" type="string"/>
         <property name="orderExecutor" column="executors_of_the_order" type="string"/>
         <property name="periodOfExecution" column="period_of_execution" type="date"/>

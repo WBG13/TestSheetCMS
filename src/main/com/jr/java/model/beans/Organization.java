@@ -4,9 +4,6 @@ import core.IDocument;
 
 import java.io.Serializable;
 
-/**
- * Created by TH-221 on 08.11.2016.
- */
 public class Organization implements Serializable, IDocument {
     private String name, address, registeredOffice, director;
     private int id;

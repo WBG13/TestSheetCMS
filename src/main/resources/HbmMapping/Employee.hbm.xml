@@ -12,6 +12,8 @@
             <generator class="native"/>
         </id>
         <property name="name" column="name" type="string"/>
+        <property name ="organizationId" column="organization_id" type="int"/>
+        <property name="departmentId" column="department_id" type="string"/>
         <property name="surname" column="surname" type="string"/>
         <property name="patronymic" column="patronymic" type="string"/>
         <property name="position" column="position" type="string"/>

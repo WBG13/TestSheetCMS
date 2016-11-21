@@ -4,11 +4,8 @@ import core.IDocument;
 
 import java.io.Serializable;
 
-/**
- * Created by TH-221 on 08.11.2016.
- */
 public class Department implements Serializable, IDocument {
-    private String departmentName, contactDetails, director;
+    private String departmentName, contactDetails, director, organizationId;
     private int id;
 
     public int getId() {
@@ -18,6 +15,10 @@ public class Department implements Serializable, IDocument {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getOrganizationId() { return organizationId; }
+
+    public void setOrganizationId( String organizationId ) { this.organizationId = organizationId; }
 
     public String getDepartment_name() {
         return departmentName;

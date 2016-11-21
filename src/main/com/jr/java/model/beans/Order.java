@@ -1,16 +1,41 @@
 package model.beans;
 
 import core.IDocument;
+import core.OrderStatus;
 
 import java.io.Serializable;
 
-/**
- * Created by TH-221 on 08.11.2016.
- */
 public class Order implements Serializable, IDocument {
     private String orderSubject, orderAuthor, orderExecutor;
     private String periodOfExecution, signOfTheControl, signOfExecution, orderText;
+
     private int id;
+    private OrderStatus orderStatus;
+    private String orderExecutorId, orderAuthorId;
+
+    public String getOrderExecutorId() {
+        return orderExecutorId;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus status) {
+        this.orderStatus = status;
+    }
+
+    public String getOrderAuthorId() {
+        return orderAuthorId;
+    }
+
+    public void setOrderExecutorId(String orderExecutorId) {
+        this.orderExecutorId = orderExecutorId;
+    }
+
+    public void setOrderAuthorId(String orderAuthorId) {
+        this.orderAuthorId = orderAuthorId;
+    }
 
     public int getId() {
         return id;

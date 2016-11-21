@@ -11,7 +11,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-            return new AnnotationConfiguration().configure(new File("C:\\Users\\TH-221\\IdeaProjects\\DocumentManagement\\src\\main\\resources\\hibernate.cfg.xml")).buildSessionFactory();
+            return new AnnotationConfiguration().configure(new File("C:\\Users\\TH-221\\IdeaProjects\\DocumentManagementFinal\\src\\main\\resources\\hibernate.cfg.xml")).buildSessionFactory();
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
             System.err.println("Initial SessionFactory creation failed." + ex);

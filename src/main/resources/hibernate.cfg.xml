@@ -20,7 +20,7 @@
             root
         </property>
         <property name="hibernate.connection.password">
-            Ce10Irb10
+            Fr28OsI31
         </property>
 
         <mapping resource="hbmMapping/Employee.hbm.xml"/>

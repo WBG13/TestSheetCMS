@@ -27,7 +27,7 @@ public class DocumentsDatabase {
     private DAOManager<Department> departmentDAOManager = new DAOManager<Department>() {
         @Override
         public DocumentType GetQueryPrefix() {
-            return DocumentType.Departament;
+            return DocumentType.Department;
         }
     };
 

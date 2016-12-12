@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Class-Path: hk2-utils-2.3.0.jar jersey-bundle-1.19.jar json-20140107.j
+ ar javassist-3.15.0-GA.jar antlr-2.7.7.jar javax.inject-2.3.0.jar hk2
+ -api-2.3.0.jar cdi-api-1.0-SP1.jar hibernate-jpa-2.0-api-1.0.1.Final.
+ jar glassfish-embedded-web-3.1.2.2.jar hibernate-commons-annotations-
+ 4.0.2.Final.jar jsr250-api-1.0.jar hibernate-entitymanager-4.2.2.Fina
+ l.jar activation-1.1.jar simple-glassfish-api-4.1.jar jersey-core-1.1
+ 9.jar javax.inject-1.jar jboss-transaction-api_1.1_spec-1.0.1.Final.j
+ ar javax.faces-2.1.7.jar mysql-connector-java-5.1.25.jar jboss-interc
+ eptor-api-1.1.jar jersey-server-1.19.jar glassfish-4.1.jar core-2.3.0
+ .jar aopalliance-repackaged-2.3.0.jar tools.jar hk2-locator-2.3.0.jar
+  dom4j-1.6.1.jar jboss-logging-3.1.0.GA.jar javax.mail-1.5.0.jar slf4
+ j-log4j12-1.7.21.jar slf4j-api-1.7.21.jar hibernate-core-4.2.2.Final.
+ jar javaee-web-api-7.0.jar log4j-1.2.17.jar jsr311-api-1.1.1.jar java
+ ee-api-7.0.jar
+Main-Class: 
+

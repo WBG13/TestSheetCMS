@@ -2,7 +2,7 @@ package core;
 
 public enum DocumentType {
     Organization,
-    Departament,
+    Department,
     Employee,
     Order
 }

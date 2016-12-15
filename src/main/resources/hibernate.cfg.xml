@@ -11,7 +11,6 @@
             com.mysql.jdbc.Driver
         </property>
 
-        <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
             jdbc:mysql://localhost/database
         </property>
@@ -20,7 +19,7 @@
             root
         </property>
         <property name="hibernate.connection.password">
-            Fr28OsI31
+            Po23Nms87
         </property>
 
         <mapping resource="hbmMapping/Employee.hbm.xml"/>

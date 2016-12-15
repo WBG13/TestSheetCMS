@@ -1,9 +1,12 @@
 package http.listeners;
 
+
+
 import controller.errors.DocumentNotFoundException;
 import controller.managers.DepartmentManager;
 import model.beans.Department;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -11,7 +14,8 @@ import java.util.List;
 @Path("/API/Document/Department")
 public class DepartmentAPI {
 
-    DepartmentManager departmentManager = new DepartmentManager();
+    @Inject
+    DepartmentManager departmentManager;
 
     @GET
     @Path("/organization/{id}")

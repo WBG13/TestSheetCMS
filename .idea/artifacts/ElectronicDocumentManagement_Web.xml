@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ElectronicDocumentManagement:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/ElectronicDocumentManagement_Web</output-path>
+    <root id="archive" name="ElectronicDocumentManagement_Web.war">
+      <element id="artifact" artifact-name="ElectronicDocumentManagement:Web exploded" />
+    </root>
+  </artifact>
+</component>

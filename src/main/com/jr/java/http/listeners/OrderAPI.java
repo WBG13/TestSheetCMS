@@ -6,13 +6,16 @@ import controller.errors.DocumentValidationError;
 import controller.managers.OrderManager;
 import model.beans.Order;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/API/Document/Order")
 public class OrderAPI {
-    OrderManager orderManager = new OrderManager();
+
+    @Inject
+    OrderManager orderManager;
 
     @GET
     @Path("/account/{id}/assignedOrders")

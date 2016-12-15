@@ -4,13 +4,16 @@ import controller.errors.DocumentNotFoundException;
 import controller.managers.OrganizationManager;
 import model.beans.Organization;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/API/Document/Organization")
 public class OrganizationAPI {
-    OrganizationManager organizationManager = new OrganizationManager();
+
+    @Inject
+    OrganizationManager organizationManager;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

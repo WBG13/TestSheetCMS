@@ -44,11 +44,11 @@ public class DocumentsDatabase {
     }
 
     public List<Department> GetAllDepartments(String organizationId, int limit, int offset) {
-        return departmentDAOManager.ReadAll(String.format("organizationId = {0}", organizationId), limit, offset);
+        return departmentDAOManager.ReadAll(String.format("organizationId = %1$s", organizationId), limit, offset);
     }
 
     public Department GetDepartmentById(String id) {
-        return departmentDAOManager.Read(id);
+        return departmentDAOManager.Read(id, "department");
     }
 
     public void UpdateDepartment(Department department) {
@@ -65,11 +65,11 @@ public class DocumentsDatabase {
     }
 
     public List<Employee> GetAllEmployees(String organizationId, int limit, int offset) {
-        return employeeDAOManager.ReadAll(String.format("organizationId = {0}", organizationId), limit, offset);
+        return employeeDAOManager.ReadAll(String.format("organizationId = %1$s", organizationId), limit, offset);
     }
 
     public Employee GetEmployeeById(String id) {
-        return employeeDAOManager.Read(id);
+        return employeeDAOManager.Read(id, "employee");
     }
 
     public void UpdateEmployee(Employee Employee) {
@@ -90,7 +90,7 @@ public class DocumentsDatabase {
     }
 
     public Organization GetOrganizationById(String id) {
-        return organizationDAOManager.Read(id);
+        return organizationDAOManager.Read(id, "organization");
     }
 
     public void UpdateOrganization(Organization Organization) {
@@ -107,19 +107,19 @@ public class DocumentsDatabase {
     }
 
     public List<Order> GetOrdersRelatedToEmployee(String employeeId, int limit, int offset) {
-        return orderDAOManager.ReadAll(String.format("orderExecutorId = {0} OR orderAuthorId = {0}", employeeId), limit, offset);
+        return orderDAOManager.ReadAll(String.format("orderExecutorId = %1$s OR orderAuthorId = %1$s", employeeId), limit, offset);
     }
 
     public List<Order> GetOrdersForEmployyee(String employeeId, int limit, int offset) {
-        return orderDAOManager.ReadAll(String.format("orderExecutorId = {0}", employeeId), limit, offset);
+        return orderDAOManager.ReadAll(String.format("orderExecutorId = %1$s", employeeId), limit, offset);
     }
 
     public List<Order> GetOrdersByEmployee(String employeeId, int limit, int offset) {
-        return orderDAOManager.ReadAll(String.format("orderAuthorId = {0}", employeeId), limit, offset);
+        return orderDAOManager.ReadAll(String.format("orderAuthorId = %1$s", employeeId), limit, offset);
     }
 
     public Order GetOrderById(String orderId) {
-        return orderDAOManager.Read(orderId);
+        return orderDAOManager.Read(orderId, "order");
     }
 
     public void UpdateOrder(Order order) {

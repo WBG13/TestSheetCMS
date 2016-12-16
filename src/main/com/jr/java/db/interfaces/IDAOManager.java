@@ -7,7 +7,7 @@ import java.util.List;
 public interface IDAOManager<T extends IDocument> {
     void Create(T obj);
 
-    T Read(String id);
+    T Read(String id, String table);
 
     List<T> ReadAll(String query, int limit, int offset);
 

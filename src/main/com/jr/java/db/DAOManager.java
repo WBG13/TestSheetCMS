@@ -32,11 +32,12 @@ public abstract class DAOManager<T extends IDocument> implements IDAOManager<T> 
         }
     }
 
-    public T Read(String id) {
+    public T Read(String id, String table) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         T result = null;
         try {
-            String queryString = String.format("from {0} where id = {0}", id);
+            //todo read from where?
+            String queryString = String.format("from %2$s where id = %1$s", id, table);
             Query query = session.createQuery(queryString);
             result = (T) query.uniqueResult();
         } catch (RuntimeException e) {
@@ -52,7 +53,7 @@ public abstract class DAOManager<T extends IDocument> implements IDAOManager<T> 
         List<T> result = new ArrayList();
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String fullQuery = String.format("FROM {0} O WHERE O{1}", this.GetQueryPrefix(), query);
+            String fullQuery = String.format("FROM %1$s WHERE %2$s", this.GetQueryPrefix(), query);
             result = session.createQuery(fullQuery)
                     .setMaxResults(limit).setFirstResult(offset).list();
         } catch (RuntimeException e) {
